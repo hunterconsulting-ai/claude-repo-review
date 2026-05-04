@@ -40,11 +40,39 @@ Fetch and read:
 - Single-author package with no community review or activity
 - Proprietary license with unclear or restrictive terms
 
+### Claude Code–Specific Checklist
+
+Claude Code repos carry attack surfaces that generic security reviews miss. For each item below, answer yes / no / unclear and explain any non-no answer:
+
+- Registers hooks (stop, lifecycle, pre/post-tool, or similar)?
+- Hook code executes shell commands or spawns external processes?
+- Custom commands invoke shell or external tools?
+- Writes persistent state files to disk?
+- Reads local state files to influence control flow?
+- Any execution path runs without explicit user confirmation?
+- Side effects of hooks and commands fully documented?
+- Failure behavior is safe by default (fails closed, not open)?
+- A documented path exists to disable or fully remove the integration?
+
 ### Runtime Trust Surface
-Document clearly:
-- What permissions does this require?
-- What directories does it write to?
-- Does it make outbound network calls, and to where?
+
+What this repo can actually do once installed is more important than what it claims to do. Document both, then compare.
+
+**What the repo says it does** (from README, docs, config):
+- File system access:
+- Network access:
+- Hook / execution behavior:
+- External APIs or tools:
+
+**What the code actually does** (from static inspection):
+- File system access:
+- Network access:
+- Hook / execution behavior:
+- External APIs or tools:
+
+Label each inferred item: confirmed / likely / unclear.
+
+**Gap analysis:** List any behavior present in the code that is absent or understated in the documentation. If none found, state "None identified."
 
 ## Step 4 — Relevance Assessment
 
@@ -92,7 +120,7 @@ Do not recommend sandboxing for repos that are already clearly clean or clearly 
 **Verdict:** INSTALL / REVISIT / SKIP / REJECT
 
 ### Security
-[findings — hard rejects, yellow flags, runtime trust surface]
+[findings — hard rejects, yellow flags, Claude Code-specific checklist, runtime trust surface gap analysis]
 
 ### Relevance
 [High / Medium / Low / None — with specific reasoning, or "Skipped — no user context configured"]
