@@ -1,46 +1,54 @@
-# User Context — Repo Review Skill
+# User Context — Repo Review
 
-Rename this file to `user-context.md` and save it in the same folder as `SKILL.md`.
-The skill reads this file to evaluate repos against your specific work context.
-Without it, the relevance assessment step is skipped.
+Copy this file to `~/.claude/repo-review/user-context.md` and fill it in.
+(Windows: `C:\Users\<you>\.claude\repo-review\user-context.md`.)
+
+Keep it **outside** the skill's own folder — reinstalling or updating the skill replaces that
+folder, and anything you saved inside it goes with it. Every section is optional; without this
+file the review still runs in full, minus the relevance rating.
 
 ---
 
 ## My Role
-<!-- What do you do? Examples:
-- Solo consultant
-- Backend software engineer
-- Data scientist
-- Operations manager
-- Freelance developer
--->
+<!-- What do you do? e.g. solo consultant, backend engineer, data scientist, operations manager -->
 
 
 ## My Services or Use Cases
-<!-- What do you build or deliver? What kinds of repos would actually be useful to you?
-Examples:
-- Web application development (Node.js / React)
-- Data pipelines and analytics reporting
+<!-- What do you build or deliver? Used to rate relevance (Step 5). e.g.
 - Workflow automation (n8n, Make, Zapier)
-- AI/LLM integrations and tooling
-- Internal tooling for small teams
-- Client-facing dashboards
+- Web apps (Node.js / React)
+- Data pipelines and reporting
 -->
 
 
 ## My Current Tech Stack
-<!-- What tools, languages, and platforms do you use regularly?
-Examples: Python, TypeScript, PostgreSQL, Docker, Claude Code, n8n, Excel, VS Code
--->
+<!-- e.g. Python, TypeScript, PostgreSQL, Docker, Claude Code, n8n, VS Code, Windows 11 -->
+
+
+## My Hardware
+<!-- Used to say whether you can actually run it. e.g. "Windows 11 laptop, 8 GB GPU, 32 GB RAM" -->
+
+
+## Decision Records
+<!-- Optional: files where you record tooling decisions, so a review can respect them.
+     e.g. "~/notes/tooling-decisions.md — we read Markdown vaults directly, no MCP bridge" -->
 
 
 ## Security Concerns Specific to My Environment
-<!-- Any sensitivities beyond the standard security checks?
-Examples:
-- I work with HIPAA-regulated data — flag any health data handling
-- I operate in a regulated industry — flag telemetry and data egress
-- I work on client machines — flag anything that writes outside the user home directory
-- I have a shared dev environment — flag global installs and system-level changes
-
-Leave blank if none beyond the defaults.
+<!-- Anything beyond the standard checks. e.g.
+- I handle client data under NDA — flag any telemetry or data egress
+- I work with HIPAA-regulated data — flag any health-data handling
+- My working directory is a git repo — subagents must never write into it
 -->
+
+
+## Review Log
+<!-- Where reviews are recorded (see references/review-log.md). Defaults if left blank:
+     index ~/.claude/repo-review/review-index.md, log ~/.claude/repo-review/review-log.md -->
+- Index:
+- Log:
+- Archive logs (searched in the pre-check, never written to):
+
+
+## Install Defaults
+<!-- e.g. "Install skills user-scoped unless I say otherwise" -->

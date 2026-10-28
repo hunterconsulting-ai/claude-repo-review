@@ -1,0 +1,24 @@
+{
+  "name": "hunterconsulting-ai",
+  "owner": {
+    "name": "Hunter Consulting.ai",
+    "url": "https://github.com/hunterconsulting-ai"
+  },
+  "metadata": {
+    "description": "Claude Code plugins from Hunter Consulting.ai."
+  },
+  "plugins": [
+    {
+      "name": "repo-review",
+      "description": "Review a GitHub repo, Claude Code skill or plugin, or MCP server for security, relevance and overlap before you install or connect it.",
+      "version": "2.0.0",
+      "author": {
+        "name": "Hunter Consulting.ai",
+        "url": "https://github.com/hunterconsulting-ai"
+      },
+      "source": "./",
+      "category": "security",
+      "homepage": "https://github.com/hunterconsulting-ai/claude-repo-review"
+    }
+  ]
+}

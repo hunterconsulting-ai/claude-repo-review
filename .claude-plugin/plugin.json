@@ -1,0 +1,13 @@
+{
+  "name": "repo-review",
+  "version": "2.0.0",
+  "description": "Review a GitHub repo, Claude Code skill or plugin, or MCP server for security, relevance and overlap before you install or connect it. Includes delta reviews of updates and a REVISIT sweep.",
+  "author": {
+    "name": "Hunter Consulting.ai",
+    "url": "https://github.com/hunterconsulting-ai"
+  },
+  "homepage": "https://github.com/hunterconsulting-ai/claude-repo-review",
+  "repository": "https://github.com/hunterconsulting-ai/claude-repo-review",
+  "license": "MIT",
+  "keywords": ["security", "supply-chain", "skills", "plugins", "mcp", "code-review", "license"]
+}
