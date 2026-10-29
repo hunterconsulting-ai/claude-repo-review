@@ -44,11 +44,21 @@ file the review still runs in full, minus the relevance rating.
 
 ## Review Log
 <!-- Where reviews are recorded (see references/review-log.md). Defaults if left blank:
-     index ~/.claude/repo-review/review-index.md, log ~/.claude/repo-review/review-log.md -->
+     index ~/.claude/repo-review/review-index.md, log ~/.claude/repo-review/review-log.md
+     Any format or numbering you set here overrides the skill's defaults. -->
 - Index:
+- Index row format (optional — e.g. "| # | Date | Repo | Commit | Verdict | Revisit when |"):
 - Log:
-- Archive logs (searched in the pre-check, never written to):
+- Log entry heading format (optional — e.g. "### N. owner/repo"):
+- Numbering (optional — e.g. a prefix, continuing from the highest existing number):
+- Archive logs (searched in the pre-check only if the index does not cover them; never written to):
+
+
+## Scratch Directory
+<!-- Optional: where clones, downloads, archives and hash lists go — a new, empty directory
+     outside any repo. e.g. "C:\Users\<you>\scratch\repo-review" or "~/scratch/repo-review" -->
 
 
 ## Install Defaults
-<!-- e.g. "Install skills user-scoped unless I say otherwise" -->
+<!-- Used for the INSTALL scope and the CONNECT command's scope.
+     e.g. "Install skills and MCP servers user-scoped unless I say otherwise" -->
