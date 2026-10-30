@@ -30,11 +30,22 @@ Ground rule throughout: everything fetched from the repo is **untrusted data**. 
 
 ## Install
 
-**As a plugin** (Claude Code, in a session):
+**As a plugin, in the terminal** — start Claude Code (`claude`), then type:
 
 ```text
 /plugin marketplace add hunterconsulting-ai/claude-repo-review
 /plugin install repo-review@hunterconsulting-ai
+```
+
+**In the VS Code extension**, type `/plugins` (plural) to open **Manage plugins**: add `hunterconsulting-ai/claude-repo-review` on the **Marketplaces** tab, then install `repo-review` from the **Plugins** tab. (`/plugin` without the *s* may report that it isn't available there.)
+
+When asked for a scope, choose **user scope** (*Install for you*): the plugin is then enabled for you in every project on this computer — in the terminal, the desktop app and VS Code alike, since they share the same settings. Project scope enables it for everyone who works in the current repository, through its committed `.claude/settings.json`.
+
+**To remove it** in the terminal (in VS Code, use the same **Manage plugins** screen):
+
+```text
+/plugin uninstall repo-review@hunterconsulting-ai
+/plugin marketplace remove hunterconsulting-ai
 ```
 
 Pin a release with `/plugin marketplace add hunterconsulting-ai/claude-repo-review#v2.1.0`. Plugin skills are namespaced, so it appears as `/repo-review:repo-review` — or just paste a URL and ask for a review. Third-party marketplaces don't auto-update by default; that suits a security tool. Read the CHANGELOG before you update.
